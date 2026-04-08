@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mutya Portfolio</title>
+<style>
+/* GENERAL RESET */
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; }
+body { display:flex; min-height:100vh; background:#f0f2f5; color:#333; }
+
+/* SIDEBAR */
+.sidebar {
+  width:250px;
+  background:#09091a;
+  color:#ab0101;
+  padding:20px;
+  display:flex;
+  flex-direction:column;
+}
+.sidebar h2 { margin-bottom:30px; font-size:1.8em; text-align:center; }
+.sidebar a {
+  display:block;
+  padding:12px 15px;
+  margin:8px 0;
+  color:#d9c4c4;
+  text-decoration:none;
+  cursor:pointer;
+  border-radius:8px;
+  transition:0.3s;
+}
+.sidebar a:hover { background:#8b9ece; }
+
+/* MAIN CONTENT */
+.main { flex:1; padding:30px; overflow-x:hidden; }
+.page { display:none; animation:fadeIn 0.3s ease; }
+.active { display:block; }
+
+/* PROFILE SECTION */
+.profile {
+  text-align:center;
+  margin-bottom:40px;
+}
+.profile img {
+  width:140px;
+  height:140px;
+  border-radius:50%;
+  object-fit:cover;
+  border:4px solid #4ecca3;
+  margin-bottom:15px;
+}
+.profile h1 { font-size:1.6em; margin-bottom:5px; }
+.profile p { font-size:1em; color:#555; }
+
+/* CARDS GRID */
+.cards {
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+  gap:20px;
+}
+.card {
+  background:#fff;
+  padding:25px 20px;
+  border-radius:12px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.1);
+  text-align:center;
+  transition:transform 0.2s;
+}
+.card:hover { transform:translateY(-5px); }
+.card h3 { margin-bottom:15px; font-size:1.2em; color:#162447; }
+
+/* BUTTONS AND LINKS */
+button {
+  padding:10px 20px;
+  border:none;
+  background:#4ecca3;
+  color:white;
+  cursor:pointer;
+  border-radius:8px;
+  font-weight:bold;
+  transition:0.3s;
+}
+button:hover { background:#3da785; }
+
+a.viewBtn {
+  color:#1b1b2f;
+  text-decoration:underline;
+  margin-top:10px;
+  display:block;
+  font-weight:500;
+}
+
+/* MESSAGES */
+.message { font-size:14px; margin-top:10px; font-weight:bold; }
+
+/* MEDIA QUERY FOR MOBILE */
+@media(max-width:768px){
+  body{ flex-direction:column;}
+  .sidebar{ width:100%; display:flex; overflow-x:auto; flex-direction:row; }
+  .sidebar a{ flex:1; text-align:center; margin:0; padding:12px 0; }
+  .main { padding:20px 10px; }
+}
+
+/* ANIMATION */
+@keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
+a.viewBtn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #4ecca3;      /* main button color */
+  color: white;             /* text color */
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+a.viewBtn:hover {
+  background: #3da785;      /* darker on hover */
+  transform: translateY(-2px); /* subtle lift effect */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+  <h2>Portfolio</h2>
+  <a onclick="showPage('home')">Home</a>
+  <a onclick="showPage('dashboard')">Dashboard</a>
+  <a onclick="showPage('quiz')">Quiz Upload</a>
+  <a onclick="showPage('lab')">Lab Upload</a>
+  <a onclick="showPage('exam')">Major Exam Upload</a>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main">
+
+<!-- HOME -->
+<div id="home" class="page active">
+  <div class="profile">
+    <img id="profilePhoto" src="c:\Users\User\Desktop\emjay\662290127_1928708324443118_7426054074896512856_n.jpg" alt="Profile Photo">
+    <h1>Mutya, Mark Joon Suhail M.</h1>
+    <p>Bachelor Of Science In Computer Science</p>
+  </div>
+  <h2>About Me</h2>
+  <p>Hello! I’m a passionate Computer Science student who enjoys learn coding, playing guitar, songwriting, and cooking.</p>
+  <h2>Skills</h2>
+  <ul>
+    <li>Playing Guitar</li>
+    <li>Songwriting</li>
+    <li>Cooking</li>
+    <li>C++ Programming</li>
+  </ul>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboard" class="page">
+  <h1>Dashboard</h1>
+  <div class="cards">
+    <div class="card">
+      <h3>Quiz 1</h3>
+      <a href="c:\Users\User\Desktop\emjay\quiz 1.jpg" target="_blank" class="viewBtn">View Photo</a>
+    </div>
+    <div class="card">
+      <h3>Quiz 2</h3>
+      <a href="c:\Users\User\Desktop\emjay\quiz2.jpg" target="_blank" class="viewBtn">View Photo</a>
+    </div>
+    <div class="card">
+      <h3>Quiz 3</h3>
+      <a href="c:\Users\User\Desktop\emjay\3.jpg" target="_blank" class="viewBtn">View Photo</a>
+    </div>
+    <div class="card">
+      <h3>Lab Work</h3>
+      <a href="c:\Users\User\Desktop\emjay\lab.jpg" target="_blank" class="viewBtn">View Photo</a>
+    </div>
+    <div class="card">
+      <h3>Major Exam</h3>
+      <a href="images/exam.png" target="_blank" class="viewBtn">View Photo</a>
+    </div>
+  </div>
+</div>
+
+<!-- QUIZ UPLOAD -->
+<div id="quiz" class="page">
+  <h1>Quiz Upload</h1>
+  <div class="cards">
+    <div class="card">
+      <h3>Quiz 1</h3>
+      <input type="file" id="quizFile1">
+      <button onclick="submitQuiz(1)">Submit</button>
+      <p id="quizMsg1" class="message"></p>
+    </div>
+    <div class="card">
+      <h3>Quiz 2</h3>
+      <input type="file" id="quizFile2">
+      <button onclick="submitQuiz(2)">Submit</button>
+      <p id="quizMsg2" class="message"></p>
+    </div>
+    <div class="card">
+      <h3>Quiz 3</h3>
+      <input type="file" id="quizFile3">
+      <button onclick="submitQuiz(3)">Submit</button>
+      <p id="quizMsg3" class="message"></p>
+    </div>
+  </div>
+</div>
+
+<!-- LAB UPLOAD -->
+<div id="lab" class="page">
+  <h1>Lab Upload</h1>
+  <div class="card">
+    <input type="file" id="labFile">
+    <button onclick="submitLab()">Submit</button>
+    <p id="labMsg" class="message"></p>
+  </div>
+</div>
+
+<!-- EXAM UPLOAD -->
+<div id="exam" class="page">
+  <h1>Major Exam Upload</h1>
+  <div class="card">
+    <input type="file" id="examFile">
+    <button onclick="submitExam()">Submit</button>
+    <p id="examMsg" class="message"></p>
+  </div>
+</div>
+
+</div>
+
+<script>
+function showPage(pageId){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById(pageId).classList.add('active');
+}
+
+// Upload functions
+function submitQuiz(num){
+  const fileInput = document.getElementById('quizFile'+num);
+  const msg = document.getElementById('quizMsg'+num);
+  const file = fileInput.files[0];
+  if(!file){ msg.style.color="red"; msg.textContent="Select a file!"; return; }
+  msg.style.color="green"; msg.textContent="Quiz "+num+" submitted!";
+  document.querySelector("#dashboard .cards .card:nth-child("+num+") a").href = URL.createObjectURL(file);
+  fileInput.value = ''; // reset input
+}
+
+function submitLab(){
+  const fileInput = document.getElementById('labFile');
+  const msg = document.getElementById('labMsg');
+  const file = fileInput.files[0];
+  if(!file){ msg.style.color="red"; msg.textContent="Select a file!"; return; }
+  msg.style.color="green"; msg.textContent="Lab submitted!";
+  document.querySelector("#dashboard .cards .card:nth-child(4) a").href = URL.createObjectURL(file);
+  fileInput.value = '';
+}
+
+function submitExam(){
+  const fileInput = document.getElementById('examFile');
+  const msg = document.getElementById('examMsg');
+  const file = fileInput.files[0];
+  if(!file){ msg.style.color="red"; msg.textContent="Select a file!"; return; }
+  msg.style.color="green"; msg.textContent="Exam submitted!";
+  document.querySelector("#dashboard .cards .card:nth-child(5) a").href = URL.createObjectURL(file);
+  fileInput.value = '';
+}
+</script>
+
+</body>
+</html>
